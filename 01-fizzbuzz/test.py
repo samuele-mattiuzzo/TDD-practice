@@ -15,7 +15,7 @@ class TestFizzBuzz(unittest.TestCase):
         self.assertEqual(fizzbuzz(5), 'Buzz')
 
     def test_should_return_fizzbuzz_if_multiple_of_three_and_five(self):
-        self.assertEqual(fizzbuzz(5), 'Buzz')
+        self.assertEqual(fizzbuzz(15), 'FizzBuzz')
 
 
 if __name__ == '__main__':
