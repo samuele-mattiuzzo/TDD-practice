@@ -28,6 +28,9 @@ class TestStringcalculator(unittest.TestCase):
         with self.assertRaises(Exception):
             stringcalculator('//,\n1,-2,3')
 
+    def test_should_ignore_numbers_above_1000(self):
+        self.assertEqual(stringcalculator('//,\n1,2,3,1001'), 6)
+
 
 if __name__ == '__main__':
     unittest.main()

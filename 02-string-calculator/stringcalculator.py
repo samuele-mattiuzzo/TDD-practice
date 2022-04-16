@@ -2,6 +2,7 @@ import re
 
 DELIMITER_ERROR_MESSAGE = 'The input cannot end with a delimiter'
 NEGATIVE_NUMBER_ERROR_MESSAGE = 'No negative numbers allowed'
+MAX_ALLOWED = 1000
 
 
 def stringcalculator(ipt):
@@ -22,4 +23,4 @@ def stringcalculator(ipt):
         raise Exception(NEGATIVE_NUMBER_ERROR_MESSAGE)
 
     # return the sum
-    return sum(str_to_int)
+    return sum([i for i in str_to_int if i < MAX_ALLOWED])
