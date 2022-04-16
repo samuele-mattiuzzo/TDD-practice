@@ -1,6 +1,6 @@
 import unittest
 
-from stringcalculator import ERROR_MESSAGE, stringcalculator
+from stringcalculator import stringcalculator
 
 
 class TestStringcalculator(unittest.TestCase):
@@ -23,6 +23,10 @@ class TestStringcalculator(unittest.TestCase):
 
     def test_should_allow_custom_separator(self):
         self.assertEqual(stringcalculator('//,\n1,2,3'), 6)
+
+    def test_should_not_allow_negative_numbers(self):
+        with self.assertRaises(Exception):
+            stringcalculator('//,\n1,-2,3')
 
 
 if __name__ == '__main__':
