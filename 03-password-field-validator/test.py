@@ -9,19 +9,20 @@ class TestPasswordFieldValidator(unittest.TestCase):
         self.valid_password = '1aMval1d_'
         self.invalid_password = 'not1'
 
-    def test_should_return_true_if_password_matches_conditions(self):
+    def test_should_return_true_and_no_errors_if_password_matches_conditions(self):
         valid, errors = password_validator(self.valid_password)
 
         self.assertTrue(valid)
         self.assertFalse(len(errors))
 
-    def test_should_contain_all_error_messages_if_multiple(self):
+    def test_should_return_false_and_contain_all_matched_error_messages(self):
         valid, errors = password_validator(self.invalid_password)
 
         self.assertFalse(valid)
         self.assertEqual(len(errors), len(ERROR_MESSAGES))
 
         joined_errors = '|'.join([err for err in errors])
+
         self.assertIn(ERROR_MESSAGES['LENGTH'], joined_errors)
         self.assertIn(ERROR_MESSAGES['NUMBERS'], joined_errors)
         self.assertIn(ERROR_MESSAGES['CAPITAL'], joined_errors)

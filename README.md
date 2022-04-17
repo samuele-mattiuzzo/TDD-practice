@@ -5,3 +5,5 @@
 - 01: FizzBuzz
 
 - 02: String calculator
+
+- 03: Password field input validator

@@ -1,5 +1,4 @@
 import re
-from curses import ERR
 
 ERROR_MESSAGES = {
     'LENGTH': 'Password must be at least 8 characters',
@@ -9,9 +8,9 @@ ERROR_MESSAGES = {
 }
 
 VALID_PASSWORD_LENGTH = 8
-TWO_NUMBERS_REGEX = r'\d.*\d'
-CAPITAL_LETTER_REGEX = r'[A-Z]'
-SPECIAL_CHAR_REGEX = r'[^a-zA-Z\d]'
+NUMBERS_REGEX = r'\d.*\d'
+CAPITAL_REGEX = r'[A-Z]'
+SPECIAL_REGEX = r'[^a-zA-Z\d]'
 
 
 def password_validator(password):
@@ -20,13 +19,13 @@ def password_validator(password):
     if len(password) < VALID_PASSWORD_LENGTH:
         errors.append(ERROR_MESSAGES['LENGTH'])
 
-    if not bool(re.search(TWO_NUMBERS_REGEX, password)):
+    if not bool(re.search(NUMBERS_REGEX, password)):
         errors.append(ERROR_MESSAGES['NUMBERS'])
 
-    if not bool(re.search(CAPITAL_LETTER_REGEX, password)):
+    if not bool(re.search(CAPITAL_REGEX, password)):
         errors.append(ERROR_MESSAGES['CAPITAL'])
 
-    if not bool(re.search(SPECIAL_CHAR_REGEX, password)):
+    if not bool(re.search(SPECIAL_REGEX, password)):
         errors.append(ERROR_MESSAGES['SPECIAL'])
 
     return (len(errors) == 0, errors)
