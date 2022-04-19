@@ -9,8 +9,8 @@ class TestSearch(unittest.TestCase):
         self.invalid_search_term = 'a'  # invalid
         self.exact_search_text = 'Va'  # valencia, vancouver
         self.exact_search_text_mixed_case = 'vA'  # valencia, vancouver
-        self.search_text_contained = 'an'  # bankok, vancouver, istanbul
-        self.search_wildcard_all = '*'  # bankok, vancouver, istanbul
+        self.search_text_contained = 'an'  # bangkok, vancouver, istanbul
+        self.search_wildcard_all = '*'  # DATABASE
         self.search_no_result = 'tre'  # []
 
     def test_less_than_two_chars_returns_no_results(self):
