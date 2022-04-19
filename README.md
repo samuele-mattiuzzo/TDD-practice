@@ -9,3 +9,5 @@
 - 03: Password field input validator
 
 - 04: Search
+
+- 05: Point of sale (POS)
