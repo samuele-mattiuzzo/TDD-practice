@@ -17,19 +17,23 @@ class TestSearch(unittest.TestCase):
         self.assertEqual(search(self.invalid_search_term), [])
 
     def test_two_or_more_chars_returns_all_matching_cities(self):
-        self.assertEqual(search(self.exact_search_text), ["Valencia", "Vancouver"])
+        self.assertEqual(search(self.exact_search_text),
+                         ["Valencia", "Vancouver"])
 
     def test_two_or_more_chars_returns_all_matching_cities_case_insensitive(self):
-        self.assertEqual(search(self.exact_search_text_mixed_case), ["Valencia", "Vancouver"])
+        self.assertEqual(search(self.exact_search_text_mixed_case), [
+                         "Valencia", "Vancouver"])
 
-    def test_two_or_more_chars_returns_all_matching_cities_case_insensitive(self):
-        self.assertEqual(search(self.search_text_contained), ["Vancouver", "Bangkok", "Istanbul"])
+    def test_two_or_more_chars_returns_all_matching_cities_if_included(self):
+        self.assertEqual(search(self.search_text_contained), [
+                         "Vancouver", "Bangkok", "Istanbul"])
 
     def test_wildcard_returns_all_all_cities(self):
         self.assertEqual(search(self.search_wildcard_all), DATABASE)
 
     def test_no_match_returns_empty_array(self):
         self.assertEqual(search(self.search_no_result), [])
+
 
 if __name__ == '__main__':
     unittest.main()
