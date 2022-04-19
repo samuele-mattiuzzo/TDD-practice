@@ -7,3 +7,5 @@
 - 02: String calculator
 
 - 03: Password field input validator
+
+- 04: Search
