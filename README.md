@@ -11,3 +11,5 @@
 - 04: Search
 
 - 05: Point of sale (POS)
+
+- 06: Banking
