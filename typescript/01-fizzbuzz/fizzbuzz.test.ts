@@ -12,4 +12,8 @@ describe('test FizzBuzz implementation', () => {
   it('should return Buzz for multiples of 5', () => {
     expect(FizzBuzz(5)).toEqual("Buzz");
   })
+
+  it('should return FizzBuzz for multiples of 3 and 5', () => {
+    expect(FizzBuzz(15)).toEqual("FizzBuzz");
+  })
 })
