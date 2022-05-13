@@ -7,8 +7,13 @@ export function StringCalculator(input: string): number {
   if (input === "") return 0;
 
   // we need filter to remove empty values
-  var values = input.split(/,|\n/).filter(c => c),
-      sum = 0;
+  var splitted = input.split(/\n/),
+      sum = 0,
+      delimiter = '',
+      values = [];
+
+  delimiter = splitted[0].replace('//', '');
+  values = splitted[1].split(delimiter).filter(c => c);
 
   for (var i = 0; i < values.length; i++) {
     sum += +values[i];
