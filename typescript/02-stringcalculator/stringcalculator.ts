@@ -13,9 +13,7 @@ export function StringCalculator(input: string): number {
       throw new Error("Error: the input can't end with a delimiter");
     }
 
-  for (var i = 0; i < values.length; i++) {
-    sum += +values[i];
-  }
+  values.forEach(x => { sum += +x; });
 
   return sum;
 }
