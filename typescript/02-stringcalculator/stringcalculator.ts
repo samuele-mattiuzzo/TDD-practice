@@ -12,12 +12,12 @@ export function StringCalculator(input: string): number {
   if (input.endsWith(delimiter)) {
     throw new Error("Error: the input can't end with a delimiter");
   }
-  
+
   if (values.every(x => +x >= 0) === false) {
     throw new Error("Error: no negative values allowed");
   }
 
-  values.forEach(x => { sum += +x; });
+  values.forEach(x => { if (+x < 1000) { sum += +x; } });
 
   return sum;
 }

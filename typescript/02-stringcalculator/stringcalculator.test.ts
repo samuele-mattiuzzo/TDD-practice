@@ -32,4 +32,8 @@ describe('test StringCalculator implementation', () => {
   it('should return an error if the input contains negative values', () => {
     expect(() => StringCalculator("//;\n1;2;-3")).toThrow("Error: no negative values allowed");
   })
+
+  it('should return the sum of all numbers if they are not >= 1000', () => {
+    expect(StringCalculator("//;\n1;3;1000")).toEqual(4);
+  })
 })
