@@ -20,4 +20,8 @@ describe('test StringCalculator implementation', () => {
   it('should return the sum of all numbers with mixed delimiters in input', () => {
     expect(StringCalculator("1,2\n3")).toEqual(6);
   })
+
+  it('should return an error if the input ends with a delimiter', () => {
+    expect(() => StringCalculator("1,2\n3,")).toThrow("Error: the input can't end with a delimiter");
+  })
 })
