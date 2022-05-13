@@ -5,5 +5,9 @@ export function StringCalculator(input: string): number {
   if (input.length === 1) return +input;
 
   var values = input.split(',');
-  return +values[0] + +values[1];
+  var sum = 0;
+  for (var i = 0; i < values.length; i++) {
+    sum += +values[i];
+  }
+  return sum;
 }

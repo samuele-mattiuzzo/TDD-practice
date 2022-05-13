@@ -9,7 +9,11 @@ describe('test StringCalculator implementation', () => {
     expect(StringCalculator("1")).toEqual(1);
   })
 
-  it('should return the sum of number in comma-separated input', () => {
+  it('should return the sum of 2 numbers in comma-separated input', () => {
     expect(StringCalculator("1,2")).toEqual(3);
+  })
+
+  it('should return the sum of all numbers in comma-separated input', () => {
+    expect(StringCalculator("1,2,3")).toEqual(6);
   })
 })
