@@ -22,6 +22,14 @@ describe('test StringCalculator implementation', () => {
   })
 
   it('should return the sum of all numbers with an arbitrary delimiter in input', () => {
-    expect(StringCalculator("//;\n1;3")).toEqual(4);;
+    expect(StringCalculator("//;\n1;3")).toEqual(4);
+  })
+
+  it('should return the sum of all numbers with an arbitrary delimiter in input', () => {
+    expect(StringCalculator("//;\n1;3")).toEqual(4);
+  })
+
+  it('should return an error if the input contains negative values', () => {
+    expect(() => StringCalculator("//;\n1;2;-3")).toThrow("Error: no negative values allowed");
   })
 })
